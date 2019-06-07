@@ -38,7 +38,8 @@ c)  def bunnyEars(bunnies):                     # header, does not count
 ```
 
 Overall complexity: O(1) + O(n) = **O(n)**. Requires some (linear) additional
-space on the call stack for the recursive calls.
+space on the call stack for the recursive calls. The `n` is the size of input,
+so there the number of `bunnies`.
 
 # Exercise II
 
