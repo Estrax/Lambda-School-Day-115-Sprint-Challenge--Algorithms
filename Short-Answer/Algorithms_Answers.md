@@ -78,3 +78,17 @@ of the challenge, so the easiest way is to use the plain **lower bound**.
    Otherwise, do the binary search between `L` and `R = m`.
 6. When `L` is no longer strictly smaller than `R`, return `L`. `L` is the
    lowest floor we can be sure that the egg will crash if we drop it from.
+
+---
+
+Another approach: **binsearch on a result**. Especially useful when we have an
+infinite number of floors. Also **O(log n)**.
+
+1. We start with the floors `L = 0` and `R = 1` and check the result of dropping
+   an egg from the floor `R`.
+2. If the egg doesn't crash, then make the value of `R` the double of what was
+   it in the previous step, then repeat the drop test.
+3. If the egg crashes, dropped from the given floor, then do `binsearch`, or
+   more precisely, the `lower bound` on L and R, as described above.
+4. The algorithm returns the number of the lowest floor we can be sure that the
+   egg will crash if we drop it from.
